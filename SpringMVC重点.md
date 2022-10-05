@@ -6,7 +6,7 @@
 
 分别是`启动服务器初始化过程`和`单次请求过程`
 
-![image-20221004092122602](D:\SpringMVC\assets\image-20221004092122602.png)
+![image-20221004092122602](.\assets\image-20221004092122602.png)
 
 ## 1.1:启动服务器初始化过程
 
@@ -221,7 +221,7 @@ public class ServletContainersInitConfig extends AbstractDispatcherServletInitia
 
 ### 1:普通参数
 
-![image-20221004101319898](D:\SpringMVC\assets\image-20221004101319898.png)
+![image-20221004101319898](.\assets\image-20221004101319898.png)
 
 如果形参与地址参数名不一致该如何解决?
 
@@ -312,7 +312,7 @@ public class User {
 
 发送请求和参数:
 
-![image-20221004101638156](D:\SpringMVC\assets\image-20221004101638156.png)
+![image-20221004101638156](.\assets\image-20221004101638156.png)
 
 ```java
 //POJO参数：请求参数与形参对象中的属性对应即可完成参数传递
@@ -330,7 +330,7 @@ public String pojoParam(User user){
 
 ### 4:数组类型参数
 
-![image-20221004101727457](D:\SpringMVC\assets\image-20221004101727457.png)
+![image-20221004101727457](.\assets\image-20221004101727457.png)
 
 ```java
 //数组参数：同名请求参数可以直接映射到对应名称的形参数组对象中
@@ -346,7 +346,7 @@ public String arrayParam(String[] likes){
 
 ### 5:集合类型参数
 
-![image-20221004101806399](D:\SpringMVC\assets\image-20221004101806399.png)
+![image-20221004101806399](.\assets\image-20221004101806399.png)
 
 ```java
 //集合参数：同名请求参数可以使用@RequestParam注解映射到对应名称的集合对象中作为数据
@@ -429,7 +429,7 @@ SpringMVC默认使用的是jackson来处理json的转换，所以需要在pom.xm
 </dependency>
 ```
 
-![image-20221004102228242](D:\SpringMVC\assets\image-20221004102228242.png)
+![image-20221004102228242](.\assets\image-20221004102228242.png)
 
 1：开启SpringMVC注解支持
 
@@ -655,7 +655,7 @@ public interface Converter<S, T> {
 
 日期格式转换（String → Date）
 
-![image-20221004103612182](D:\SpringMVC\assets\image-20221004103612182.png)
+![image-20221004103612182](.\assets\image-20221004103612182.png)
 
 
 
@@ -992,7 +992,7 @@ public Result getById(@PathVariable Integer id) {
 
 当传入的id为1，则会出现如下效果：
 
-![image-20221004105604181](D:\SpringMVC\assets\image-20221004105604181.png)
+![image-20221004105604181](.\assets\image-20221004105604181.png)
 
 前端接收到这个信息后和之前我们约定的格式不一致，这个问题该如何解决?
 
@@ -1142,7 +1142,7 @@ public class ProjectExceptionAdvice {
 
   - 编程人员未预期到的异常，如:用到的文件不存在
 
-    ![1630659690341](D:\SpringMVC\assets\1630659690341.png)
+    ![1630659690341](.\assets\1630659690341.png)
 
 反正这些分类都是看自己的业务，具体怎么分，看自己怎么分类
 
@@ -1211,7 +1211,7 @@ public class SpringMvcSupport extends WebMvcConfigurationSupport {
 
 我们先看一张图:
 
-![1630676280170](D:\SpringMVC\assets\1630676280170.png)
+![1630676280170](.\assets\1630676280170.png)
 
 (1)浏览器发送一个请求会先到Tomcat的web服务器
 
@@ -1251,7 +1251,7 @@ public class SpringMvcSupport extends WebMvcConfigurationSupport {
 - 过滤器是tomcat服务器创建的对象，拦截器是springmvc容器中创建的对象
 - 过滤器是一个执行时间点。拦截器有三个执行时间点
 
-![1630676903190](D:\SpringMVC\assets\1630676903190.png)
+![1630676903190](.\assets\1630676903190.png)
 
 ## 10.2 拦截器使用
 
@@ -1345,7 +1345,7 @@ public class SpringMvcSupport extends WebMvcConfigurationSupport {
 
 ## 10.3:执行流程
 
-![1630679464294](D:\SpringMVC\assets\1630679464294.png)
+![1630679464294](.\assets\1630679464294.png)
 
 当有拦截器后，请求会先进入preHandle方法
 
@@ -1503,7 +1503,7 @@ public class SpringMvcConfig implements WebMvcConfigurer {
 * 当拦截器中出现对原始处理器的拦截，后面的拦截器均终止运行
 * 当拦截器运行中断，仅运行配置在前面的拦截器的afterCompletion操作
 
-![1630680579735](D:\SpringMVC\assets\1630680579735.png)
+![1630680579735](.\assets\1630680579735.png)
 
 preHandle：与配置顺序相同，必定运行
 
